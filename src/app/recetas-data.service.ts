@@ -3,8 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RecetaDto } from './create-receta/receta.dto';
 import { Receta } from './receta';
+import { environment } from 'src/environments/environment';
 
-const URL = "http://localhost:3000/recetas";
+const URL = environment.apiUrl + "/recetas"
 @Injectable({
   providedIn: 'root'
 })

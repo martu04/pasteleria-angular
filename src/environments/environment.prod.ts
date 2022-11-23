@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true, 
+  apiUrl: "https://pasteleria-dh5p.onrender.com"
 };
