@@ -1,24 +1,28 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col"> Postre </th>
-      <th scope="col">Ingredientes </th>
-      <th scope="col">Receta</th>
-      <th scope="col">tiempo</th>
-      <th scope="col">dificultad</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let receta of recetas">
-      <td scope="row"> {{ receta.postre.nombre}} </td>
-      <td> {{ receta.ingredientes }} </td>
-      <td> {{ receta.receta }} </td>
-      <td> {{ receta.tiempo }} </td>
-      <td> {{ receta.dificultad }} </td>
-    </tr>
-  </tbody>
-</table>
-<div class="d-grid gap-2 col-6 mx-auto">
-  <a [routerLink]="['/recetas/new']" class="btn btn-outline-danger" tabindex="-1" role="button"
-    aria-disabled="true">Añadir receta</a>
+<div class="album py-3">
+  <div class="container-xxl">
+    <table class="table table-bordered" style="border:#f8dabf">
+      <thead>
+        <tr>
+          <th scope="col"> POSTRE </th>
+          <th scope="col">INGREDIENTES </th>
+          <th scope="col">PASOS</th>
+          <th scope="col">TIEMPO</th>
+          <th scope="col">DIFICULTAD</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let receta of recetas">
+          <td scope="row"> {{ receta.postre.nombre}} </td>
+          <td> {{ receta.ingredientes }} </td>
+          <td> {{ receta.receta }} </td>
+          <td> {{ receta.tiempo }} </td>
+          <td> {{ receta.dificultad }} </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <a [routerLink]="['/recetas/new']" class="btn btn-outline-danger" tabindex="-1" role="button"
+        aria-disabled="true">Añadir receta</a>
+    </div>
+  </div>
 </div>

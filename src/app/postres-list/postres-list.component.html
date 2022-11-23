@@ -1,35 +1,45 @@
-<div class="container d-flex justify-content-between bd-highlight mb-2">
-  <div class="card" *ngFor="let postre of postres">
-    <img src="{{postre.imagen}}">
-    <div class="card-body">
-      <h5 class="card-title">{{ postre.nombre }}</h5>
-      <li class="card-text"> Precio: {{ postre.precio | currency: 'ARS' }} </li>
-      <li class="card-text" *ngIf="postre.stock > 0"> Stock: {{ postre.stock }} </li>
-      <li *ngIf="postre.stock==0">Sin stock</li>
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" [attr.data-bs-target]="'#modal-'+postre.id">
-        Ver receta
-      </button>
+<div class="container">
+  <div class="album py-3">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="card" *ngFor="let postre of postres">
+        <img src="{{postre.imagen}}">
+        <div class="card-body">
+          <h5 class="card-title">{{ postre.nombre }}</h5>
+          <li class="card-text"> Precio: {{ postre.precio | currency: 'ARS' }} </li>
+          <li class="card-text" *ngIf="postre.stock > 0"> Stock: {{ postre.stock }} </li>
+          <li *ngIf="postre.stock==0">Sin stock</li>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+            [attr.data-bs-target]="'#modal-'+postre.id">
+            Ver receta
+          </button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="modal-{{ postre.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel"> {{ postre.nombre}} </h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            <div *ngFor="let receta of postre.recetas " class="p-2 border border-2 mb-2" > 
-              
-              <h5> Ingredientes </h5> <p> {{ receta.ingredientes }} </p>
-              <h5> Pasos </h5> <p> {{ receta.receta }} </p>
-              <h5> Tiempo </h5> <p> {{ receta.tiempo }} </p>
-              <h5> Dificultad </h5> <p> {{ receta.dificultad }} </p>
-            </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <!-- Modal -->
+          <div class="modal fade" id="modal-{{ postre.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel"> {{ postre.nombre}} </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div *ngFor="let receta of postre.recetas " class="p-2 border border-2 mb-2">
+
+                    <h5> Ingredientes </h5>
+                    <p> {{ receta.ingredientes }} </p>
+                    <h5> Pasos </h5>
+                    <p> {{ receta.receta }} </p>
+                    <h5> Tiempo </h5>
+                    <p> {{ receta.tiempo }} </p>
+                    <h5> Dificultad </h5>
+                    <p> {{ receta.dificultad }} </p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
