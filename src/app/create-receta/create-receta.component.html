@@ -1,0 +1,30 @@
+<form>
+  <div class="mb-3">
+    <label for="postre" class="form-label">Postre </label>
+    <select name="postre" id="postre" class="form-control" [(ngModel)]="recetaForm.postre" required>
+      <option *ngFor="let postre of postres" value="{{ postre.id }}"> {{ postre.nombre }}</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="ingredientes" class="form-label">Ingrediente</label>
+    <input type="text" name="ingredientes" class="form-control" id="ingredientes" [(ngModel)]="recetaForm.ingredientes" required>
+  </div>
+  <div class="mb-3">
+    <label for="receta" class="form-label">Receta</label>
+    <input type="text" name="receta" class="form-control" id="receta" aria-describedby="emailHelp"
+      [(ngModel)]="recetaForm.receta" required>
+  </div>
+  <div class="mb-3">
+    <label for="tiempo" class="form-label">Tiempo</label>
+    <input type="text" name="tiempo" class="form-control" id="tiempo" aria-describedby="emailHelp"
+      [(ngModel)]="recetaForm.tiempo" required>
+  </div>
+  <div class="mb-3">
+    <label for="dificultad" class="form-label">Dificultad</label>
+    <input type="text" name="dificultad" class="form-control" id="dificultad" aria-describedby="emailHelp"
+      [(ngModel)]="recetaForm.dificultad" required>
+  </div>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button type="button" class="btn btn-outline-danger" (click)="createReceta()">Crear receta</button>
+  </div>
+</form>
