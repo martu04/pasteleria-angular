@@ -19,13 +19,13 @@
             aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header border-danger">
                   <h1 class="modal-title fs-5" id="exampleModalLabel"> {{ postre.nombre}} </h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <div *ngFor="let receta of postre.recetas " class="p-2 border border-2 mb-2">
-
+                  <h4> Recetas </h4>
+                  <div *ngFor="let receta of postre.recetas " class="p-2 border border-2 mb-2 border-secondary">
                     <h5> Ingredientes </h5>
                     <p> {{ receta.ingredientes }} </p>
                     <h5> Pasos </h5>
@@ -36,7 +36,7 @@
                     <p> {{ receta.dificultad }} </p>
                   </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer border-danger">
                   <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
                 </div>
               </div>
