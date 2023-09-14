@@ -1,0 +1,28 @@
+version: '2'
+services:
+  postgres:
+    image: 'postgres:latest'
+    restart: always
+    volumes:
+      - 'postgres_data:/var/lib/postgresql/data'
+    environment:
+      - "POSTGRES_PASSWORD=280404"
+      - "POSTGRES_USER=pasteleria"
+      - "POSTGRES_DB=pasteleria"
+    ports:
+      - '5432:5432'
+  
+  backend: 
+    image: martina004/pasteleria-backend 
+    ports:
+      - '3000:3000'
+    environment:
+      - DB_HOST=postgres
+
+  frontend:
+    build: .
+    ports:
+      - '4200:4200'
+
+volumes:
+  postgres_data:
