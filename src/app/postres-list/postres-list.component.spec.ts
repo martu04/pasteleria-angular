@@ -28,5 +28,4 @@ describe('PostresListComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h3')?.textContent).toContain('Lista de postres de Cocina Jacque Artesanal');
   });
-
 });
