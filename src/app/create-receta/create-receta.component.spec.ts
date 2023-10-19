@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
 import { CreateRecetaComponent } from './create-receta.component';
 
 describe('CreateRecetaComponent', () => {
@@ -8,6 +8,7 @@ describe('CreateRecetaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[HttpClientModule],
       declarations: [ CreateRecetaComponent ]
     })
     .compileComponents();

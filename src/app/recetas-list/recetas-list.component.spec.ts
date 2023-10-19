@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { RecetasListComponent } from './recetas-list.component';
 
@@ -8,6 +9,7 @@ describe('RecetasListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[HttpClientModule], 
       declarations: [ RecetasListComponent ]
     })
     .compileComponents();
@@ -20,4 +22,5 @@ describe('RecetasListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });
