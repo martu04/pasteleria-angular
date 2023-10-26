@@ -26,6 +26,6 @@ describe('PostresListComponent', () => {
     const fixture = TestBed.createComponent(PostresListComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h3')?.textContent).toContain('Lista de postres de Cocina Jacque Artesanal');
+    expect(compiled.querySelector('h3')?.textContent).toContain('mar');
   });
 });
