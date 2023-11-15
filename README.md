@@ -2,6 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
 [![codecov](https://codecov.io/gh/martu04/pasteleria-angular/graph/badge.svg?token=N7BRJE7RDN)](https://codecov.io/gh/martu04/pasteleria-angular)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a13b55dad39c4b2ea5c00842c4fe6fc9)](https://app.codacy.com/gh/martu04/pasteleria-angular/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 ## Development server
 
