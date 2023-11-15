@@ -1,6 +1,7 @@
 # Bakery
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
+[![codecov](https://codecov.io/gh/martu04/pasteleria-angular/graph/badge.svg?token=N7BRJE7RDN)](https://codecov.io/gh/martu04/pasteleria-angular)
 
 ## Development server
 
