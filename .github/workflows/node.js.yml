@@ -13,9 +13,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [16.x, 18.x, 20.x]
       
-
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -24,8 +23,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+    - run: npm run build --if-present 
     - run: npm test -- --no-watch --no-progress --browsers=ChromeHeadless
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    - name: "Trigger deploy on Netlify"
+      run: "curl -X POST -d {} ${{ secrets.DEPLOY_NETLIFY_HOOK }}" 
