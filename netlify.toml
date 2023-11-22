@@ -1,5 +1,14 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+build:
+  command: ng build --configuration=production
+  commandOrigin: ui
+  environment:
+    - REVIEW_ID
+     publish: /opt/build/repo/dist/bakery
+     publishOrigin: ui
+redirects:
+     - from: /*
+      status: 200
+      to: /index.html
+  redirectsOrigin: config
+
   
